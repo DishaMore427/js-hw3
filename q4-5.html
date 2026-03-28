@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    price:
+    <input type="number" name="" id="price"><br><br>
+    Product Name:
+    <input type="text" name="" id="pname"><br><br>
+    Quantity:
+    <input type="number" name="" id="quantity"><br><br>
+    Customer Name:
+    <input type="text" name="" id="cname"><br><br>
+    Address:
+    <input type="text" name="" id="add"><br><br>
+
+    <button id="b1">Submit</button>
+    <script>
+        const b1 = document.getElementById("b1")
+        b1.addEventListener("click", () => {
+
+            const price = document.getElementById("price").value
+
+            const pname = document.getElementById("pname").value
+            const nameReg = /^[A-Za-z]+$/
+
+            const quantity = document.getElementById("quantity").value
+
+            const cname = document.getElementById("cname").value
+            const cnameReg = /^[A-Za-z]+$/
+
+            const address = document.getElementById("add").value
+            const addReg = /^[A-Za-z]+$/
+
+
+
+            if (!price < 0) {
+                alert("Invalid price")
+            } if (!nameReg.test(pname)) {
+                alert("Invalid Product name")
+            } if (!quantity > 0) {
+                alert("Invalid Quantity")
+            } if (!cnameReg.test(cname)) {
+                alert("Invalid Customer name")
+            } if (!addReg.test(address)) {
+                alter("Enter value")
+            }
+            else {
+                alert("successful")
+            }
+
+            localStorage.setItem("cname", cname)
+            localStorage.setItem("pname", pname)
+
+            localStorage.setItem("add", address)
+
+
+
+        })
+    </script>
+</body>
+
+</html>
